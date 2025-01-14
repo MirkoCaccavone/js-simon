@@ -4,11 +4,12 @@
 // Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
 
 
-// selezione elementi di input
-const outputCountDown = document.getElementById('countdown')
-
-
 // selezione elementi di output
+const outputCountDown = document.getElementById('countdown');
+const randomNumber = document.getElementById('numbers-list');
+
+
+// selezione elementi di input
 
 
 // FUNZIONI
@@ -24,6 +25,15 @@ countDown = setInterval(() => {
     }else{
         outputCountDown.innerHTML = --second;
 
-    }
-    
+    }  
 },1000);
+
+let numbers = Math.floor(Math.random() * 50) + 1;
+const newItems = document.createElement('li');
+
+newItems.innerText = parseInt(numbers);
+
+randomNumber.appendChild(newItems);
+
+
+
