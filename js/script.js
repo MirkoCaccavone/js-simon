@@ -28,12 +28,20 @@ countDown = setInterval(() => {
     }  
 },1000);
 
-let numbers = Math.floor(Math.random() * 50) + 1;
-const newItems = document.createElement('li');
+// generazione numeri casuali
+let numbers = [];
 
-newItems.innerText = parseInt(numbers);
+for(let i = 0; i < 5; i++){
+    
+    let number = Math.floor(Math.random() * 50) + 1;
+    let newItems = document.createElement('li');
 
-randomNumber.appendChild(newItems);
+    numbers.push(number);
+    newItems.innerText = parseInt(numbers[i]);
+    randomNumber.appendChild(newItems);
 
+};
+
+console.log(numbers);
 
 
