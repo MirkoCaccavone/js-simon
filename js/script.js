@@ -22,16 +22,20 @@ for(let i = 0; i < 5; i++){
     
     let number = Math.floor(Math.random() * 50) + 1;
     let newItems = document.createElement('li');
+    if(numbers.includes(number)){
+        i--;
+    }else{
+        numbers.push(number);
+        newItems.innerText = parseInt(numbers[i]);
+        randomNumber.appendChild(newItems);
 
-    numbers.push(number);
-    newItems.innerText = parseInt(numbers[i]);
-    randomNumber.appendChild(newItems);
-
+    }
+    
 };
 console.log(numbers);
 
 // countdown
-let second = 5;
+let second = 30;
 
 countDown = setInterval(() => {
 
@@ -41,6 +45,7 @@ countDown = setInterval(() => {
         randomNumber.innerHTML = '';
         // mostro il form
         form.classList.remove('d-none');
+
 
     }else{
         outputCountDown.innerHTML = --second;
